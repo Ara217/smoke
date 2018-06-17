@@ -1,13 +1,11 @@
 @extends('auth.layout.app')
 
-@section('admin-content')
-    <div class="mx-auto col-md-9 ">
+@section('admin_content')
+    <div class="mx-auto col-md-9">
         <div class="wrapper">
             <div id="content" class="w-100">
                 <main class="col bg-faded py-3">
                     <h3>Заказы</h3>
-
-
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="Order-list">

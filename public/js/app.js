@@ -144,6 +144,12 @@ $(function () {
         //     loader.show('normal');
         // }
     });
+
+    $(document).on('change', ':file', function (e) {
+        var inputname = $(e.currentTarget).val().replace(/\\/g, '/').replace(/.*\//, '');
+        $('.' + $(e.currentTarget).attr('name') + '-file-name').text(inputname);
+        debugger;
+    });
 });
 
 // setup axios response

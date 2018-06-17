@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Элит-Выкуп') }}</title>
+        <title>{{ config('app.name', '') }}</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/libs.js') }}"></script>
@@ -25,7 +25,7 @@
     <body>
         <div>
             @include('auth.layout.header')
-                @yield('admin-content')
+                @yield('admin_content')
             @include('auth.layout.footer')
         </div>
     </body>
