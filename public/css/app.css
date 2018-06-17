@@ -13899,7 +13899,7 @@ body {
   background-repeat: round;
   background-attachment: scroll;
   background-size: contain;
-  color: #e5ddd2;
+  color: #e5ddd2 !important;
 }
 
 p {
@@ -13952,8 +13952,8 @@ a:focus {
   float: left;
 }
 
-.navbar-custom {
-  color: #e5ddd2;
+.navbar-custom a {
+  color: #e5ddd2 !important;
 }
 
 .line {
