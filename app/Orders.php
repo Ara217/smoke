@@ -1,0 +1,21 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Orders extends Model
+{
+    protected $table = 'orders';
+    protected $fillable = ['name', 'phone', 'order'];
+
+    public function getOrderAttribute($value)
+    {
+        return json_decode($value);
+    }
+
+    public function setOrderAttribute($value)
+    {
+        $this->attributes['order'] = json_encode($value);
+    }
+}

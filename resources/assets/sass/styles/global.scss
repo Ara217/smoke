@@ -1,0 +1,141 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+ul {
+  list-style-type: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.article-slider-block {
+  height: 392px;
+  width: 155px;
+}
+
+.article-slider-subBlock {
+  width: 100%;
+  height: 192px;
+  border: 1px solid;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.social-share-btns-container {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  font-size: 0;
+  top: 50%;
+  margin: -30px 0;
+  text-align: center;
+  width: 100%;
+  z-index: 111;
+}
+
+
+.social-share-btns {
+  display: inline-block;
+  overflow: hidden;
+  .share-btn {
+    float: left;
+    margin: 0 5px;
+    padding: 8px 16px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    vertical-align: middle;
+    @include transition(background 0.2s ease-in-out);
+
+    i {
+      margin-right: 5px;
+      display: inline-block;
+      font-size: 18px;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Colors
+.share-btn {
+  background-color: #95a5a6;
+  &:hover {
+    background-color: darken(#95a5a6, 10%);
+  }
+}
+.share-btn-twitter {
+  background-color: #00aced;
+  &:hover {
+    background-color: darken(#00aced, 10%);
+  }
+}
+.share-btn-facebook {
+  background-color: #3b5998;
+  &:hover {
+    background-color: darken(#3b5998, 10%);
+  }
+}
+.share-btn-linkedin {
+  background-color: #007bb6;
+  &:hover {
+    background-color: darken(#007bb6, 10%);
+  }
+}
+.share-btn-reddit {
+  background-color: #ED001C;
+  &:hover {
+    background-color: darken(#ED001C, 10%);
+  }
+}
+
+.share-btn-mail {
+  background-color: #f1c40f;
+  &:hover {
+    background-color: darken(#f1c40f, 5%);
+  }
+}
+
+.credits {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  width: 100%;
+  z-index: 1111;
+  letter-spacing: 0.04em;
+  font-size: 10px;
+  text-transform: uppercase;
+  a {
+    color: rgba(255,255,255,0.5);
+    display: inline-block;
+    padding: 4px 4px;
+    text-decoration: none;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
