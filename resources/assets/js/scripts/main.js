@@ -54,12 +54,11 @@ $(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
         parent.remove();
         renderCartCount(cart.length);
-    })
+    });
 
     $('#orderCart').on('submit', (e) => {
         e.preventDefault();
         let form = $(e.currentTarget);
-        debugger;
 
         let data = {
             name: form.find('input[name="name"]').val(),

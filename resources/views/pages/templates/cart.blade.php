@@ -9,8 +9,8 @@
                 @include('pages.templates.left-side-bar')
                     <div id="content">
                         @include('pages.templates.menu-button')
-                        <h2>Заказать</h2>
-                        <div id="cartContentPlacement"></div>
+                        <h2>Корзина</h2>
+                        <div class="row" id="cartContentPlacement"></div>
                         <div class="order-cart">
                             {!! Form::open(['url' => '/products', 'method' => 'post', 'id' => 'orderCart', 'files' => true]) !!}
                                 <div class="form-group">

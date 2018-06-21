@@ -148,7 +148,6 @@ $(function () {
     $(document).on('change', ':file', function (e) {
         var inputname = $(e.currentTarget).val().replace(/\\/g, '/').replace(/.*\//, '');
         $('.' + $(e.currentTarget).attr('name') + '-file-name').text(inputname);
-        debugger;
     });
 });
 
@@ -304,7 +303,6 @@ $(function () {
     $('#orderCart').on('submit', function (e) {
         e.preventDefault();
         var form = $(e.currentTarget);
-        debugger;
 
         var data = {
             name: form.find('input[name="name"]').val(),

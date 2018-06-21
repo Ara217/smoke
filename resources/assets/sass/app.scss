@@ -287,7 +287,6 @@ a[aria-expanded="true"]::before {
   }
 }
 
-
 .column {
   float: left;
   width: 50%;
@@ -321,7 +320,7 @@ a[aria-expanded="true"]::before {
 .product-block {
   width: 260px;
   height: 335px;
-  margin: 0 10px 10px 0;
+  margin: 0 8px 10px 0;
   border: 1px solid black;
   a {
     font-size: 24px;
@@ -330,5 +329,47 @@ a[aria-expanded="true"]::before {
       width: 165px;
       height: 165px;
       display: block;
+  }
+}
+.gallery-wrap .img-big-wrap img {
+  height: 450px;
+  width: auto;
+  display: inline-block;
+  cursor: zoom-in;
+}
+
+
+.gallery-wrap .img-small-wrap .item-gallery {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ddd;
+  margin: 7px 2px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.gallery-wrap {
+  .img-small-wrap {
+    text-align: center;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: zoom-in;
+    }
+  }
+}
+
+.card {
+  background: none !important;
+  border: none !important;
+}
+
+#carousel {
+  height: 450px;
+  img {
+    width: 100%;
+    height: 450px;
   }
 }

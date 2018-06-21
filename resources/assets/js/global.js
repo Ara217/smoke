@@ -45,7 +45,6 @@ $(() => {
     $(document).on('change', ':file', function(e) {
         let inputname = $(e.currentTarget).val().replace(/\\/g, '/').replace(/.*\//, '');
         $(`.${$(e.currentTarget).attr('name')}-file-name`).text(inputname);
-        debugger;
     });
 
 });

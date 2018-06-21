@@ -1,14 +1,16 @@
 <nav class="navbar bg-faded navbar-custom">
-    <div class="container">
+    <div class="container col-md-8">
         <div class="header-logo">
-            {{--<img src="{{asset('/images/fireplace-2.png')}}" alt="Элит выкуп">--}}
+            <a href="/" class="mx-auto">
+                <img src="{{asset('/images/logo-02.png')}}" alt="">
+            </a>
         </div>
         <ul class="nav navbar-nav navbar-logo mx-auto logo-block">
             <a href="/" class="mx-auto">
 {{--                <img src="{{asset('images/ruseren-logo2.png')}}" class="logo-img" alt="Элит выкуп">--}}
             </a>
         </ul>
-        <ul class="left-navbar">
+        <ul class="nav navbar-nav pull-sm-right admin-left-navbar">
             <li>
                 <a href="/products">Список продуктов</a>
             </li>

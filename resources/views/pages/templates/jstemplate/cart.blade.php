@@ -1,9 +1,13 @@
 <template id="cartContent">
     {#{ _.each(cart, function(product) { }#}
-        <div class="column cart-product-block" data-name="{#{= product.name }#}">
-            <img src="{#{= '/images/preview/' + product.image }#} " alt="{#{= product.name }#}">
+        <div class="column" data-name="{#{= product.name }#}">
+            <p>
+                Имя: {#{= product.name }#}
+            </p>
             <p class="product">
-                Цена: {#{= product.price }#} p. <br>
+                Цена: {#{= product.price }#} p.
+            </p>
+            <p>
                 Количество: {#{= product.count }#}
             </p>
             <button class="btn remove-from-cart">Удалить</button>

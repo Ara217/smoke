@@ -1,7 +1,9 @@
 <nav class="navbar bg-faded  navbar-custom">
     <div class="container">
-        <div class="nav navbar-nav pull-sm-left">
-            {{--<img src="{{asset('/images/fireplace-last.png')}}">--}}
+        <div class="header-logo">
+            <a href="/admin" class="mx-auto">
+                <img src="{{asset('/images/logo-02.png')}}" alt="">
+            </a>
         </div>
         <ul class="nav navbar-nav navbar-logo mx-auto logo-block">
             {{--<a href="/admin" class="mx-auto">--}}
@@ -13,7 +15,6 @@
                 <li><a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                 {{--<li><a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a></li>--}}
             @else
-                <li><a class="nav-link text-white" href="{{route('orders')}}">Заказы</a></li>
                 <li><a class="nav-link text-white" href="{{route('products.create')}}">Добавить продукт</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link text-white" href="{{ route('logout') }}"
