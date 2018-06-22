@@ -70,7 +70,7 @@ class ProductsController extends Controller
             ]);
 
             if ($product) {
-                return redirect()->route('products.index');
+                return back();
             } else {
                 return back();
             }

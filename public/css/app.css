@@ -13890,7 +13890,7 @@ a:hover {
   border-color: #D9DCE1;
 }
 
-body {
+.guest-body {
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
@@ -13900,6 +13900,11 @@ body {
   background-attachment: scroll;
   background-size: contain;
   color: #e5ddd2 !important;
+}
+
+.admin-body {
+  color: #e5ddd2 !important;
+  background-color: #343334;
 }
 
 p {
@@ -14153,8 +14158,7 @@ a[aria-expanded="true"]::before {
 .product-block {
   width: 260px;
   height: 335px;
-  margin: 0 8px 10px 0;
-  border: 1px solid black;
+  margin: 0 0 10px 0;
 }
 
 .product-block a {
@@ -14210,5 +14214,35 @@ a[aria-expanded="true"]::before {
 #carousel img {
   width: 100%;
   height: 450px;
+}
+
+.pagination .page-item .page-link {
+  color: #e5ddd2;
+  background: none;
+  border: 1px solid #dee2e6;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 1px solid;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.flex-container .flax-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
 }
 

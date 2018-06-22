@@ -22,7 +22,7 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="admin-body">
         <div>
             @include('auth.layout.header')
                 @yield('admin_content')

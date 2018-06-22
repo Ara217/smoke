@@ -6,57 +6,42 @@
             <div id="content" class="w-100">
                 <main class="col bg-faded py-3">
                     <div class="col-md-12 col-md-offset-1 text-center">
-                        <h3>Заказы</h3>
+                        <h2>Заказы</h2>
                         <div class="Order-list">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                         @foreach($orders->all() as $order)
-                                            <table class="table">
-                                                <tr>
-                                                    <th>
-                                                        <a style="font-size: 20px">Имя: {{$order->name}}</a>
-                                                    </th>
-                                                    <th>
-                                                        <p style="font-size: 20px">Номер: {{$order->phone}}</p>
-                                                    </th>
-                                                    <th>
-                                                        <p style="font-size: 20px">Дата: {{$order->created_at}}</p>
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                            <table class="table table-striped table-bordered table-hover">
-                                                <thead>
-                                                <tr>
-                                                    <th>Имя продукта</th>
-                                                    <th>Цена</th>
-                                                    <th>Количество</th>
-                                                    <th>Итог</th>
-                                                    <th># #</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach($order->order as $product)
-                                                        <tr>
-                                                            <td>{{$product->name}}</td>
-                                                            <td>
-                                                                <label class="label label-danger">{{$product->price}} Р.</label>
-                                                            </td>
-                                                            <td>
-                                                                {{$product->count}}
-                                                            </td>
-                                                            <td>
-                                                                {{ $product->price *  $product->count}} Р.
-                                                            </td>
-                                                            <td>
-                                                                <a href="/products/{{$product->id}}"  class="btn btn-warning" >Смотреть</a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
+                                            <div>
+                                                <div style="display: flex; justify-content: space-around;">
+                                                    <div class="col-md-4">
+                                                        <p>
+                                                            Имя: {{$order->name}}
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <p>
+                                                            Номер: {{$order->phone}}
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <p>
+                                                            Дата: {{$order->created_at}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                @foreach($order->order as $product)
+                                                    <a href="/products/{{$product->id}}" class="flex-container">
+                                                        <div class="flax-item col-md-2">{{$product->name}}</div>
+                                                        <div class="flax-item col-md-2">{{$product->price}} Р.</div>
+                                                        <div class="flax-item col-md-2">{{$product->count}}</div>
+                                                        <div class="flax-item col-md-2">{{ $product->price *  $product->count}} Р.</div>
+                                                    </a>
+                                                @endforeach
+                                            </div>
                                         @endforeach
                                     </div>
+                                    {{ $orders->links() }}
                                 </div>
                             </div>
                         </div>

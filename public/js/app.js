@@ -283,7 +283,6 @@ $(function () {
 
         var productsCount = Object.keys(JSON.parse(localStorage.getItem('cart'))).length;
         $('#cartCount').text('Корзина ' + productsCount);
-
         //todo cart
     });
 

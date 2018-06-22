@@ -8,6 +8,7 @@ $(() => {
         let name = parent.data('name');
         let cart = {};
 
+
         if (localStorage.getItem('cart')) {
             let oldCart = JSON.parse(localStorage.getItem('cart'));
             let product = oldCart[name];
@@ -39,7 +40,6 @@ $(() => {
 
         let productsCount = Object.keys(JSON.parse(localStorage.getItem('cart'))).length;
         $('#cartCount').text('Корзина ' + productsCount);
-
         //todo cart
     });
 

@@ -1,6 +1,9 @@
 <template id="cartContent">
     {#{ _.each(cart, function(product) { }#}
-        <div class="column" data-name="{#{= product.name }#}">
+        <div class="col-md-3 product-block" data-name="{#{= product.name }#}">
+            <a class="product-link" href="{#{= '/products/' + product.id }#}">
+                <img src="{#{= '/images/preview/' + product.image }#} " alt="{#{= product.name }#}">
+            </a>
             <p>
                 Имя: {#{= product.name }#}
             </p>

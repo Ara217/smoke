@@ -24,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin-panel.home', ['orders' => Orders::paginate(8)]);
+        return view('admin-panel.home', ['orders' => Orders::paginate(5)]);
     }
 }
