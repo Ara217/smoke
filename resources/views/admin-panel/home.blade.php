@@ -12,8 +12,9 @@
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                         @foreach($orders->all() as $order)
+                                            <hr style="background-color: #e5ddd2">
                                             <div>
-                                                <div style="display: flex; justify-content: space-around;">
+                                                <div style="display: flex">
                                                     <div class="col-md-4">
                                                         <p>
                                                             Имя: {{$order->name}}
@@ -27,6 +28,28 @@
                                                     <div class="col-md-4">
                                                         <p>
                                                             Дата: {{$order->created_at}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div style="display: flex">
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            Имя
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            Цена
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            Количество
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            Итог
                                                         </p>
                                                     </div>
                                                 </div>

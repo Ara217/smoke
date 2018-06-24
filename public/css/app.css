@@ -14228,9 +14228,12 @@ a[aria-expanded="true"]::before {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  border: 1px solid;
   margin-bottom: 5px;
-  padding: 10px;
+  padding: 5px;
+}
+
+.flex-container:hover {
+  background-color: #A5A5A5;
 }
 
 .flex-container .flax-item {

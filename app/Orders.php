@@ -11,7 +11,7 @@ class Orders extends Model
 
     public function getOrderAttribute($value)
     {
-        return json_decode($value);
+        return json_decode($value, true);
     }
 
     public function setOrderAttribute($value)

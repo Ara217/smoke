@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Orders;
 use App\Product;
 use File;
+use Illuminate\Support\Facades\Mail;
 use URL;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -173,7 +174,12 @@ class ProductsController extends Controller
             'name' => $data['name'],
             'phone' => $data['phone'],
             'order' => $data['order']
-        ]);
+        ])->toArray();
+
+        Mail::send('pages.emails.order', $newOrder, function($message) use ($newOrder) {
+            $message->to('elitevikup@gmail.com', $newOrder['name'])->subject('Заказ - Smoke.com');
+            $message->from('elitevikup@gmail.com', '');
+        });
 
         return response()->json([
             "success" => $newOrder ? true : false
