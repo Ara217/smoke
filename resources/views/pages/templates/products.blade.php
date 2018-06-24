@@ -16,9 +16,9 @@
                                 <h2>Популярные бренды</h2>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row products-list">
                             @foreach($products as $product)
-                                <div class="col-md-3 product-block" data-image="{{$product->image}}" data-id="{{$product->id}}" data-price="{{$product->price}}"  data-count="{{$product->count}}" data-name="{{$product->name}}">
+                                <div class="col-md-3 product-block" data-image="{{$product->image}}" data-id="{{$product->id}}" data-price="{{$product->price}}"  data-count="{{$product->count}}" data-brand="{{$product->brand}}" data-name="{{$product->name}}">
                                     <a class="product-link" href="/products/{{$product->id}}">
                                         <img src="{{asset('images/preview/' . $product->image )}}" alt="{{$product->name}}">
                                     </a>

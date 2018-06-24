@@ -6,6 +6,7 @@ $(() => {
         let price = parent.data('price');
         let count = parent.data('count');
         let name = parent.data('name');
+        let brand = parent.data('brand');
         let cart = {};
 
 
@@ -18,6 +19,7 @@ $(() => {
                 oldCart[name] = {
                     id: id,
                     name: name,
+                    brand: brand,
                     image: image,
                     price: price,
                     count: count
@@ -30,6 +32,7 @@ $(() => {
                 [name]: {
                     id: id,
                     name: name,
+                    brand: brand,
                     image: image,
                     price: price,
                     count: count

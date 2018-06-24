@@ -107,6 +107,12 @@ $(function () {
     // show body when scripts are loaded
     $('body').show();
 
+    if ($(window).width() <= 1024) {
+        $('.content-block div:first').removeClass('mx-auto col-md-8');
+        $('.content-block div:first').addClass('col-md-12');
+        $('.products-list>div').removeClass('col-md-3').addClass('col-md-4');
+    }
+
     _.templateSettings = {
         interpolate: /\{#\{=(.+?)\}#\}/g,
         evaluate: /\{#\{(.+?)\}#\}/g
@@ -252,6 +258,7 @@ $(function () {
         var price = parent.data('price');
         var count = parent.data('count');
         var name = parent.data('name');
+        var brand = parent.data('brand');
         var cart = {};
 
         if (localStorage.getItem('cart')) {
@@ -263,6 +270,7 @@ $(function () {
                 oldCart[name] = {
                     id: id,
                     name: name,
+                    brand: brand,
                     image: image,
                     price: price,
                     count: count
@@ -274,6 +282,7 @@ $(function () {
             cart = _defineProperty({}, name, {
                 id: id,
                 name: name,
+                brand: brand,
                 image: image,
                 price: price,
                 count: count

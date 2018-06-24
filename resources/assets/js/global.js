@@ -3,6 +3,12 @@ $(() => {
     // show body when scripts are loaded
     $('body').show();
 
+    if ($(window).width() <= 1024) {
+        $('.content-block div:first').removeClass('mx-auto col-md-8');
+        $('.content-block div:first').addClass('col-md-12');
+        $('.products-list>div').removeClass('col-md-3').addClass('col-md-4')
+    }
+
     _.templateSettings = {
         interpolate: /\{#\{=(.+?)\}#\}/g,
         evaluate: /\{#\{(.+?)\}#\}/g
