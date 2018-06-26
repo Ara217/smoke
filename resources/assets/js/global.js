@@ -91,7 +91,9 @@ window.axios.interceptors.response.use((response) => {
 });
 
 renderNewCart = (cart) => {
-    $('#cartContentPlacement').html(_.template($('#cartContent').html().replace('\n', '').replace(/\s/g, ' '))({cart: cart}))
+    if ($('#cartContent').length) {
+        $('#cartContentPlacement').html(_.template($('#cartContent').html().replace('\n', '').replace(/\s/g, ' '))({cart: cart}))
+    }
 };
 
 

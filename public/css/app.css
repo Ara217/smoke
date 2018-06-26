@@ -13894,6 +13894,10 @@ a:hover {
   border-color: #D9DCE1;
 }
 
+.color-bl {
+  color: black;
+}
+
 .guest-body {
   overflow-y: scroll;
   overflow-x: hidden;

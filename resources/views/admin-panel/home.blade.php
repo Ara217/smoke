@@ -54,11 +54,11 @@
                                                     </div>
                                                 </div>
                                                 @foreach($order->order as $product)
-                                                    <a href="/products/{{$product->id}}" class="flex-container">
-                                                        <div class="flax-item col-md-2">{{$product->name}}</div>
-                                                        <div class="flax-item col-md-2">{{$product->price}} Р.</div>
-                                                        <div class="flax-item col-md-2">{{$product->count}}</div>
-                                                        <div class="flax-item col-md-2">{{ $product->price *  $product->count}} Р.</div>
+                                                    <a href="/products/{{$product['id']}}" class="flex-container">
+                                                        <div class="flax-item col-md-2">{{$product['name']}}</div>
+                                                        <div class="flax-item col-md-2">{{$product['price']}} Р.</div>
+                                                        <div class="flax-item col-md-2">{{$product['count']}}</div>
+                                                        <div class="flax-item col-md-2">{{ $product['price'] *  $product['count']}} Р.</div>
                                                     </a>
                                                 @endforeach
                                             </div>

@@ -12,30 +12,30 @@
                     <div id="content">
                         @include('pages.templates.menu-button')
                         <h2>Добавит продукт</h2>
-                        {!! Form::open(['url' => '/products', 'method' => 'post', 'files' => true]) !!}
+                        {!! Form::open(['route' => array('products.update', $product), 'method' => 'patch', 'files' => true]) !!}
                         <div class="form-group">
                             {{Form::label('name', 'Имя продукта:')}}
-                            {{Form::text('name', null, ['class' => 'form-control form-bg', 'id' => 'name', 'placeholder' => 'Имя продукта'])}}
+                            {{Form::text('name', $product->name, ['class' => 'form-control form-bg', 'id' => 'name', 'placeholder' => 'Имя продукта'])}}
                             {{$errors->first('name')}}
                         </div>
                         <div class="form-group">
                             {{Form::label('brand', 'Бренд:')}}
-                            {{Form::text('brand', null, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Бренд'])}}
+                            {{Form::text('brand', $product->brand, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Бренд'])}}
                             {{$errors->first('brand')}}
                         </div>
                         <div class="form-group">
                             {{Form::label('price', 'Цена:')}}
-                            {{Form::text('price', null, ['class' => 'form-control form-bg', 'id' => 'price', 'placeholder' => 'Цена'])}}
+                            {{Form::text('price', $product->price, ['class' => 'form-control form-bg', 'id' => 'price', 'placeholder' => 'Цена'])}}
                             {{$errors->first('price')}}
                         </div>
                         <div class="form-group">
                             {{Form::label('count', 'Количество:')}}
-                            {{Form::text('count', null, ['class' => 'form-control form-bg', 'id' => 'count', 'placeholder' => 'Количество'])}}
+                            {{Form::text('count', $product->count, ['class' => 'form-control form-bg', 'id' => 'count', 'placeholder' => 'Количество'])}}
                             {{$errors->first('count')}}
                         </div>
                         <div class="form-group">
                             {{Form::label('description', 'Информация:')}}
-                            {{Form::textarea('description', null, ['class' => 'form-control form-bg', 'id' => 'description', 'rows' => '5', 'placeholder' => 'Информация'])}}
+                            {{Form::textarea('description', $product->description, ['class' => 'form-control form-bg', 'id' => 'description', 'rows' => '5', 'placeholder' => 'Информация'])}}
                             {{$errors->first('description')}}
                         </div>
                         <div class="form-group">
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label class="btn color-bl">
-                                Основмая фотография <input type="file" name="mainImage" id="mainImage" style="display: none; color: black">
+                                Основмая фотография <input type="file" name="mainImage" id="mainImage" style="display: none;">
                             </label>
                             <p class="mainImage-file-name"></p>
                             {{--{{Form::label('mainImage', 'Основмая фотография:')}}--}}

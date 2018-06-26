@@ -192,7 +192,9 @@ window.axios.interceptors.response.use(function (response) {
 });
 
 renderNewCart = function renderNewCart(cart) {
-    $('#cartContentPlacement').html(_.template($('#cartContent').html().replace('\n', '').replace(/\s/g, ' '))({ cart: cart }));
+    if ($('#cartContent').length) {
+        $('#cartContentPlacement').html(_.template($('#cartContent').html().replace('\n', '').replace(/\s/g, ' '))({ cart: cart }));
+    }
 };
 
 renderCartCount = function renderCartCount(productsCount) {
@@ -326,6 +328,10 @@ $(function () {
             }
         });
     });
+    //
+    // $("input[type='file']").on('change', () => {
+    //     debugger;
+    // })
 });
 
 /***/ }),

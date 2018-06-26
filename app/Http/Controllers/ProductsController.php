@@ -100,7 +100,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pages.templates.edit-product', ['product' => Product::where('id', $id)->first()]);
     }
 
     /**
@@ -112,7 +112,26 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $this->validate($request, [
+            'name' => 'string|required',
+            'brand' => 'string|required',
+            'price' => 'integer|required',
+            'count' => 'integer|required',
+            'description' => 'string|required',
+        ]);
+
+        if ($request->file('image')) {
+            $image = $this->moveAttachments($request->file('image'), 'preview');
+            $data['image'] =  $image['fileName'];
+        }
+
+        if ($request->file('mainImage')) {
+            $mainImage = $this->moveAttachments($request->file('mainImage'), 'main');
+            $data['main_image'] = $mainImage['fileName'];
+        }
+
+        Product::where('id', $id)->update($data);
+        return redirect('/products/' . $id);
     }
 
     /**

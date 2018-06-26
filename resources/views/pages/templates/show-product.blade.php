@@ -53,9 +53,16 @@
                                             {{--<dt>Delivery</dt>--}}
                                             {{--<dd>Russia, USA, and Europe</dd>--}}
                                         {{--</dl>  <!-- item-property-hor .// -->--}}
-                                        <button class="btn text-uppercase add-to-cart">
-                                            Добавить в корзину
-                                        </button>
+                                        @guest
+                                            <button class="btn text-uppercase add-to-cart">
+                                                Добавить в корзину
+                                            </button>
+                                        @else
+                                            <a href="/products/{{$product->id}}/edit" class="btn text-uppercase color-bl">
+                                                Изменить
+                                            </a>
+                                        @endguest
+
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
