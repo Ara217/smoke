@@ -243,7 +243,7 @@ a[aria-expanded="true"]::before {
     background-color: #343334;
   };
   .logo-block {
-    margin-left: unset !important;
+    align-self: flex-end;
   }
   .logo-img {
     width: 130px;

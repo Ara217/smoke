@@ -14090,7 +14090,8 @@ a[aria-expanded="true"]::before {
   }
 
   .logo-block {
-    margin-left: unset !important;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .logo-img {
