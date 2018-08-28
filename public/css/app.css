@@ -14075,6 +14075,17 @@ a[aria-expanded="true"]::before {
   }
 }
 
+@media (max-width: 760px) {
+  .logo-block {
+    display: none;
+  }
+}
+
+.logo-block {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 @media only screen and (min-width: 1025px) {
   #sidebarCollapse {
     display: none;
@@ -14087,11 +14098,6 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #343334;
-  }
-
-  .logo-block {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
   }
 
   .logo-img {

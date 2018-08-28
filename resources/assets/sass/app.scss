@@ -230,6 +230,17 @@ a[aria-expanded="true"]::before {
   }
 } //iphone
 
+
+@media (max-width: 760px) {
+  .logo-block {
+    display: none;
+  }
+} //iphone
+
+.logo-block {
+  align-self: flex-end;
+}
+
 @media only screen and (min-width : 1025px) {
   #sidebarCollapse {
     display: none;
@@ -242,9 +253,6 @@ a[aria-expanded="true"]::before {
     overflow-x: hidden;
     background-color: #343334;
   };
-  .logo-block {
-    align-self: flex-end;
-  }
   .logo-img {
     width: 130px;
   }
