@@ -117,7 +117,7 @@ class ProductsController extends Controller
             'brand' => 'string|required',
             'price' => 'integer|required',
             'count' => 'integer|required',
-            'description' => 'string|required',
+            'description' => 'string',
         ]);
 
         if ($request->file('image')) {
