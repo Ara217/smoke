@@ -41,9 +41,11 @@
             <h1>Табак Маркет</h1>
         </ul>
         <ul class="nav navbar-nav pull-sm-right admin-left-navbar">
+            @guest
             <li>
                 <a href="{{ route('login') }}">{{ __('Войти') }}</a>
             </li>
+            @endguest
             <li>
                 <a href="/products">Список продуктов</a>
             </li>
