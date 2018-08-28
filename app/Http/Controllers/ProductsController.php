@@ -51,9 +51,9 @@ class ProductsController extends Controller
             'brand' => 'string|required',
             'price' => 'integer|required',
             'count' => 'integer|required',
-            'description' => 'string|required',
-            'image' => 'image|required|mimes:jpeg,png',
-            'mainImage' => 'image|required|mimes:jpeg,png',
+            'description' => 'string',
+            'image' => 'image|mimes:jpeg,png',
+            'mainImage' => 'image|mimes:jpeg,png',
         ]);
 
         $image = $this->moveAttachments($request->file('image'), 'preview');
