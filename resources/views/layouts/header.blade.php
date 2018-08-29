@@ -37,8 +37,8 @@
                 <img src="{{asset('/images/logo-02.png')}}" alt="">
             </a>
         </div>
-        <ul class="logo-block" style="align-self: flex-end;">
-            <h1>Табак Маркет</h1>
+        <ul class="logo-block">
+            <a href="/">Табак Маркет</a>
         </ul>
         <ul class="nav navbar-nav pull-sm-right admin-left-navbar">
             @guest
@@ -61,4 +61,13 @@
             </li>
         </ul>
     </div>
+    {{--<div>--}}
+        {{--<ul>--}}
+            {{--@foreach($region as $reg)--}}
+                {{--<li>--}}
+                    {{--<a>{{$reg}}</a>--}}
+                {{--</li>--}}
+            {{--@endforeach--}}
+        {{--</ul>--}}
+    {{--</div>--}}
 </nav>

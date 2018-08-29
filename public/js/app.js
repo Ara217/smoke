@@ -258,7 +258,8 @@ $(function () {
         var id = parent.data('id');
         var image = parent.data('image');
         var price = parent.data('price');
-        var count = parent.data('count');
+        // let count = parent.data('count');
+        var count = $('#orderCount').val();
         var name = parent.data('name');
         var brand = parent.data('brand');
         var cart = {};
@@ -323,8 +324,8 @@ $(function () {
         axios.post('/products/orderByCart', data).then(function (results) {
             if (!results.errors && results.success) {
                 localStorage.removeItem('cart');
-                toastr.success('Заказ принят.');
-                window.location.replace('/');
+                toastr.success('Ваш заказ принят.Вам скоро перезвонят.');
+                // setTimeout(function(){ window.location.replace('/'); }, 2000);
             }
         });
     });

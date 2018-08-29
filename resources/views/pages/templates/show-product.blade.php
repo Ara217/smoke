@@ -54,6 +54,7 @@
                                             {{--<dd>Russia, USA, and Europe</dd>--}}
                                         {{--</dl>  <!-- item-property-hor .// -->--}}
                                         @guest
+                                            <input type="number" class="form-control p-1 mb-2 col-md-2" min="{{$product->count}}" value="{{$product->count}}" name="order-count" id="orderCount">
                                             <button class="btn text-uppercase add-to-cart">
                                                 Добавить в корзину
                                             </button>
@@ -62,7 +63,6 @@
                                                 Изменить
                                             </a>
                                         @endguest
-
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->

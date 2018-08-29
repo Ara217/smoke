@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Orders;
 use App\Product;
+use App\Region;
 use File;
 use Illuminate\Support\Facades\Mail;
 use URL;
@@ -37,7 +38,8 @@ class ProductsController extends Controller
     public function create()
     {
         $category = Category::all();
-        return view('pages.templates.create-product', ['category' => $category]);
+        $region = Region::all();
+        return view('pages.templates.create-product', ['category' => $category, 'region' => $region]);
     }
 
     /**
@@ -53,25 +55,30 @@ class ProductsController extends Controller
             'brand' => 'string|required',
             'price' => 'integer|required',
             'count' => 'integer|required',
+            'region_id' => 'integer|required',
+            'delivery' => 'integer|required',
+            'exists' => 'integer|required',
             'description' => 'string',
             'image' => 'image|mimes:jpeg,png',
-            'mainImage' => 'image|mimes:jpeg,png',
+//            'mainImage' => 'image|mimes:jpeg,png',
         ]);
 
         $image = $this->moveAttachments($request->file('image'), 'preview');
         $mainImage = $this->moveAttachments($request->file('mainImage'), 'main');
 
-        if ($image && $mainImage) {
+        if ($image/* && $mainImage*/) {
             $product = Product::create([
                 'name' => $data['name'],
                 'brand' => $data['brand'],
                 'price' => $data['price'],
                 'count' => $data['count'],
+                'region_id' => $data['region_id'],
+                'delivery' => $data['delivery'],
+                'exists' => $data['exists'],
                 'description' => $data['description'],
                 'image' => $image['fileName'],
-                'main_image' => $mainImage['fileName'],
+                'main_image' => $image['fileName'],
             ]);
-
             if ($product) {
                 return back();
             } else {
@@ -102,7 +109,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        return view('pages.templates.edit-product', ['product' => Product::where('id', $id)->first()]);
+        $category = Category::all();
+        $region = Region::all();
+        return view('pages.templates.edit-product', ['product' => Product::where('id', $id)->first(), 'category' => $category, 'region' => $region]);
     }
 
     /**
@@ -119,6 +128,9 @@ class ProductsController extends Controller
             'brand' => 'string|required',
             'price' => 'integer|required',
             'count' => 'integer|required',
+            'region_id' => 'integer|required',
+            'delivery' => 'integer|required',
+            'exists' => 'integer|required',
             'description' => 'string',
         ]);
 
@@ -188,6 +200,7 @@ class ProductsController extends Controller
         $data = $this->validate($request, [
             'name' => 'string|required',
             'phone' => 'string|required',
+            'address' => 'string|required',
             'order' => 'required'
         ]);
 

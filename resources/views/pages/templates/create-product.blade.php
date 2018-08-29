@@ -29,13 +29,38 @@
                             {{$errors->first('brand')}}
                         </div>
                         <div class="form-group">
+                            {{Form::label('region_id', 'Категория:')}}
+                            <select name="region_id" id="region_id" class="form-control form-bg">
+                                @foreach($region as $reg)
+                                    <option value="{{$reg->id}}">{{$reg->name}}</option>
+                                @endforeach
+                            </select>
+                            {{$errors->first('region_id')}}
+                        </div>
+                        <div class="form-group">
+                            {{Form::label('delivery', 'Доставка:')}}
+                            <select name="delivery" id="delivery" class="form-control form-bg">
+                                <option value="1">Да</option>
+                                <option value="2">Нет</option>
+                            </select>
+                            {{$errors->first('delivery')}}
+                        </div>
+                        <div class="form-group">
+                            {{Form::label('exists', 'Есть в наличии:')}}
+                            <select name="exists" id="exists" class="form-control form-bg">
+                                <option value="1">Да</option>
+                                <option value="2">Нет</option>
+                            </select>
+                            {{$errors->first('exists')}}
+                        </div>
+                        <div class="form-group">
                             {{Form::label('price', 'Цена:')}}
                             {{Form::text('price', null, ['class' => 'form-control form-bg', 'id' => 'price', 'placeholder' => 'Цена'])}}
                             {{$errors->first('price')}}
                         </div>
                         <div class="form-group">
                             {{Form::label('count', 'Количество:')}}
-                            {{Form::text('count', null, ['class' => 'form-control form-bg', 'id' => 'count', 'placeholder' => 'Количество'])}}
+                            {{Form::text('count', 1, ['class' => 'form-control form-bg', 'id' => 'count', 'placeholder' => 'Количество'])}}
                             {{$errors->first('count')}}
                         </div>
                         <div class="form-group">
@@ -52,15 +77,15 @@
                             {{--{{Form::file('image', ['class' => 'form-control-file form-bg', 'id' => 'image'])}}--}}
                             {{$errors->first('image')}}
                         </div>
-                        <div class="form-group">
-                            <label class="btn color-bl">
-                                Основмая фотография <input type="file" name="mainImage" id="mainImage" style="display: none; color: black">
-                            </label>
-                            <p class="mainImage-file-name"></p>
+                        {{--<div class="form-group">--}}
+                            {{--<label class="btn color-bl">--}}
+                                {{--Основмая фотография <input type="file" name="mainImage" id="mainImage" style="display: none; color: black">--}}
+                            {{--</label>--}}
+                            {{--<p class="mainImage-file-name"></p>--}}
                             {{--{{Form::label('mainImage', 'Основмая фотография:')}}--}}
                             {{--{{Form::file('mainImage', ['class' => 'form-control-file form-bg', 'id' => 'mainImage'])}}--}}
-                            {{$errors->first('mainImage')}}
-                        </div>
+                            {{--{{$errors->first('mainImage')}}--}}
+                        {{--</div>--}}
                         <input type="submit" class="btn btn-bg" value="Добавить">
                         {!! Form::close() !!}
                     </div>

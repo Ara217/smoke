@@ -4,11 +4,11 @@ $(() => {
         let id = parent.data('id');
         let image = parent.data('image');
         let price = parent.data('price');
-        let count = parent.data('count');
+        // let count = parent.data('count');
+        let count = $('#orderCount').val();
         let name = parent.data('name');
         let brand = parent.data('brand');
         let cart = {};
-
 
         if (localStorage.getItem('cart')) {
             let oldCart = JSON.parse(localStorage.getItem('cart'));
@@ -72,8 +72,8 @@ $(() => {
         axios.post('/products/orderByCart', data).then((results) => {
             if (!results.errors && results.success) {
                 localStorage.removeItem('cart');
-                toastr.success('Заказ принят.');
-                window.location.replace('/');
+                toastr.success('Ваш заказ принят.Вам скоро перезвонят.');
+                // setTimeout(function(){ window.location.replace('/'); }, 2000);
             }
 
         });

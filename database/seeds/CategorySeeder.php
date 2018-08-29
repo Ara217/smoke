@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
 
 class CategorySeeder extends Seeder
 {
@@ -60,6 +61,8 @@ class CategorySeeder extends Seeder
             ['name' => 'WINSTON'],
             ['name' => 'СИГАРЫ']
         ];
+
+        Category::truncate();
         DB::table('category')->insert($category);
     }
 }

@@ -21,6 +21,10 @@
                                     {{Form::label('phone', 'Номер телефона:')}}
                                     {{Form::text('phone', null, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Номер телефона'])}}
                                 </div>
+                                <div class="form-group">
+                                    {{Form::label('phone', 'Ваш адрес:')}}
+                                    {{Form::text('phone', null, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Ваш адрес'])}}
+                                </div>
                                 <input type="submit" class="btn btn-bg" value="Заказать">
                             {!! Form::close() !!}
                         </div>

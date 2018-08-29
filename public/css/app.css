@@ -14084,6 +14084,12 @@ a[aria-expanded="true"]::before {
 
 @media (max-width: 760px) {
   .logo-block {
+    -ms-flex-item-align: auto !important;
+        align-self: auto !important;
+    font-size: 22px !important;
+  }
+
+  .header-logo {
     display: none;
   }
 }
@@ -14091,6 +14097,7 @@ a[aria-expanded="true"]::before {
 .logo-block {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  font-size: 42px;
 }
 
 @media only screen and (min-width: 1025px) {
