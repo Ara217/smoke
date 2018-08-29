@@ -13985,9 +13985,15 @@ a:focus {
 }
 
 #sidebar {
-  min-width: 140px;
-  max-width: 140px;
+  min-width: 192px;
+  max-width: 192px;
   color: #e5ddd2;
+  max-height: 950px;
+  overflow: auto;
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 #sidebar.active {
@@ -14005,7 +14011,7 @@ a:focus {
 
 .left-nav-item {
   background-color: #8c857c;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   padding-left: 5px;
 }
 
@@ -14068,7 +14074,7 @@ a[aria-expanded="true"]::before {
   }
 
   #sidebar {
-    margin-left: -145px;
+    margin-left: -200px;
   }
 
   #sidebar.active {
@@ -14118,6 +14124,11 @@ a[aria-expanded="true"]::before {
     width: 100% !important;
     height: 530px !important;
     margin: 0 0 10px 0;
+    overflow-y: auto;
+  }
+
+  .product-block::-webkit-scrollbar {
+    display: none;
   }
 
   .product-block a {
@@ -14125,8 +14136,8 @@ a[aria-expanded="true"]::before {
   }
 
   .product-block img {
-    width: 95%;
-    height: 300px !important;
+    max-width: 95%;
+    max-height: 300px !important;
     display: block;
   }
 }
@@ -14168,6 +14179,11 @@ a[aria-expanded="true"]::before {
   width: 260px;
   height: 400px;
   margin: 0 0 10px 0;
+  overflow-y: auto;
+}
+
+.product-block::-webkit-scrollbar {
+  display: none;
 }
 
 .product-block a {
@@ -14175,8 +14191,8 @@ a[aria-expanded="true"]::before {
 }
 
 .product-block img {
-  width: 90%;
-  height: 210px;
+  max-width: 90%;
+  max-height: 210px;
   display: block;
 }
 

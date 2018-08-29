@@ -11,8 +11,8 @@
                         @include('pages.templates.menu-button')
                         <div class="card">
                             <div class="row">
-                                <aside class="col-sm-7 border-right">
-                                    <article class="gallery-wrap">
+                                <aside class="col-sm-7">
+                                    <article class="gallery-wrap p-3">
                                         <div class="img-big-wrap">
                                             <div >
                                                 <img src="{{asset('images/preview/' . $product->image )}}" style="width: 100%; height: 450px">
@@ -21,7 +21,7 @@
                                     </article> <!-- gallery-wrap .end// -->
                                 </aside>
                                 <aside class="col-sm-5">
-                                    <article class="card-body p-5"  data-image="{{$product->image}}" data-id="{{$product->id}}" data-price="{{$product->price}}"  data-count="{{$product->count}}" data-name="{{$product->name}}">
+                                    <article class="card-body p-3"  data-image="{{$product->image}}" data-id="{{$product->id}}" data-price="{{$product->price}}"  data-count="{{$product->count}}" data-name="{{$product->name}}">
                                         <h2 class="title mb-3">{{$product->name}}</h2>
 
                                         <p class="price-detail-wrap">
