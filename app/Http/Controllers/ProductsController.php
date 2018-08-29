@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Orders;
 use App\Product;
 use File;
@@ -35,7 +36,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('pages.templates.create-product');
+        $category = Category::all();
+        return view('pages.templates.create-product', ['category' => $category]);
     }
 
     /**
