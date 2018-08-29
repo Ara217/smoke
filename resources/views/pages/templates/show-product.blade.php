@@ -15,7 +15,7 @@
                                     <article class="gallery-wrap p-3">
                                         <div class="img-big-wrap">
                                             <div >
-                                                <img src="{{asset('images/preview/' . $product->image )}}" style="width: 100%; height: 450px">
+                                                <img src="{{asset('images/preview/' . $product->image )}}" style="max-width: 100%; max-height: 100%">
                                             </div>
                                         </div> <!-- slider-product.// -->
                                     </article> <!-- gallery-wrap .end// -->
