@@ -20,7 +20,12 @@
                         </div>
                         <div class="form-group">
                             {{Form::label('brand', 'Бренд:')}}
-                            {{Form::text('brand', $product->brand, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Бренд'])}}
+                            <select name="brand" id="brand" class="form-control form-bg">
+                                @foreach($category as $cat)
+                                    <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                @endforeach
+                            </select>
+                            {{--                            {{Form::select('brand', $category, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Бренд'])}}--}}
                             {{$errors->first('brand')}}
                         </div>
                         <div class="form-group">
