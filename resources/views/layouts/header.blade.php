@@ -41,6 +41,13 @@
             <a href="/">Табак Маркет</a>
         </ul>
         <ul class="nav navbar-nav pull-sm-right admin-left-navbar">
+            <li>
+                <a href="/products">Список продуктов</a>
+            </li>
+            <li>
+                <a href="/products/cart" id="cartCount">Корзина</a>
+            </li>
+
             @guest
                 <li>
                     <a href="{{ route('login') }}">{{ __('Войти') }}</a>
@@ -49,16 +56,24 @@
                 <li>
                     <a href="{{route('products.create')}}">Добавить продукт</a>
                 </li>
+                <li>
+                    <a href="/about">О нас</a>
+                </li>
+                <li class="">
+                    <a class="nav-link text-white" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Выйти') }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+
             @endguest
-            <li>
-                <a href="/products">Список продуктов</a>
-            </li>
-            <li>
-                <a href="/products/cart" id="cartCount">Корзина</a>
-            </li>
-            <li>
-                <a href="/about">О нас</a>
-            </li>
+
         </ul>
     </div>
     {{--<div>--}}

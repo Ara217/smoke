@@ -19,11 +19,11 @@
                                 </div>
                                 <div class="form-group">
                                     {{Form::label('phone', 'Номер телефона:')}}
-                                    {{Form::text('phone', null, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Номер телефона'])}}
+                                    {{Form::text('phone', null, ['class' => 'form-control form-bg', 'id' => 'phone', 'placeholder' => 'Номер телефона'])}}
                                 </div>
                                 <div class="form-group">
-                                    {{Form::label('phone', 'Ваш адрес:')}}
-                                    {{Form::text('phone', null, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Ваш адрес'])}}
+                                    {{Form::label('address', 'Ваш адрес:')}}
+                                    {{Form::text('address', null, ['class' => 'form-control form-bg', 'id' => 'address', 'placeholder' => 'Ваш адрес'])}}
                                 </div>
                                 <input type="submit" class="btn btn-bg" value="Заказать">
                             {!! Form::close() !!}

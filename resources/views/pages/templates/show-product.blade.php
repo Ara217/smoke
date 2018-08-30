@@ -44,7 +44,22 @@
                                         <dl class="param param-feature">
                                             <dt>Марка#</dt>
                                             <dd>{{$product->brand}}</dd>
+                                        </dl>
+                                        <dl class="param param-feature">
+                                            @if($regionName)
+                                                <dt>Категория:
+                                                    <a href="/products/regions/{{$product->region_id}}">
+                                                        {{$regionName->name}}
+                                                    </a>
+                                                </dt>
+                                            @endif
                                         </dl>  <!-- item-property-hor .// -->
+                                        <dl class="param param-feature">
+                                            <dt>Есть в наличии: {{$product->exists ? 'Да' : 'Нет'}}</dt>
+                                        </dl>
+                                        <dl class="param param-feature">
+                                            <dt>Есть доставка: {{$product->delivery ? 'Да' : 'Нет'}}</dt>
+                                        </dl>
                                         {{--<dl class="param param-feature">--}}
                                             {{--<dt>Color</dt>--}}
                                             {{--<dd>Black and white</dd>--}}

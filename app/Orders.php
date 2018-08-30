@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Orders extends Model
 {
     protected $table = 'orders';
-    protected $fillable = ['name', 'phone', 'order'];
+    protected $fillable = ['name', 'phone', 'order', 'address'];
 
     public function getOrderAttribute($value)
     {

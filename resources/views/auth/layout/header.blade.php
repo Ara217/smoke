@@ -27,7 +27,7 @@
                     <a class="nav-link text-white" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Выйти') }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

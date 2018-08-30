@@ -27,7 +27,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <p>
-                                                            Дата: {{$order->created_at}}
+                                                            Адрес: {{$order->address}}
                                                         </p>
                                                     </div>
                                                 </div>

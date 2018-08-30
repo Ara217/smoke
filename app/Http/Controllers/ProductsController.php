@@ -64,7 +64,7 @@ class ProductsController extends Controller
         ]);
 
         $image = $this->moveAttachments($request->file('image'), 'preview');
-        $mainImage = $this->moveAttachments($request->file('mainImage'), 'main');
+//        $mainImage = $this->moveAttachments($request->file('mainImage'), 'main');
 
         if ($image/* && $mainImage*/) {
             $product = Product::create([
@@ -97,8 +97,11 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $product = Product::where(['id' => $id])->first();
-        return view('pages.templates.show-product', ['product' => $product]);
+        $product = Product::where('id', $id)->first();
+        $regionName = Region::select('name')->where('id', $product->region_id)->first();
+        $category = Category::all();
+        $region = Region::all();
+        return view('pages.templates.show-product', ['product' => $product, 'category' => $category, 'region' => $region, 'regionName' => $regionName]);
     }
 
     /**
@@ -109,9 +112,11 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
+        $product = Product::where('id', $id)->first();
+        $regionName = Region::select('name')->where('id', $product->region_id)->first();
         $category = Category::all();
         $region = Region::all();
-        return view('pages.templates.edit-product', ['product' => Product::where('id', $id)->first(), 'category' => $category, 'region' => $region]);
+        return view('pages.templates.edit-product', ['product' => $product, 'category' => $category, 'region' => $region, 'regionName' => $regionName]);
     }
 
     /**
@@ -124,13 +129,13 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         $data = $this->validate($request, [
-            'name' => 'string|required',
-            'brand' => 'string|required',
-            'price' => 'integer|required',
-            'count' => 'integer|required',
-            'region_id' => 'integer|required',
-            'delivery' => 'integer|required',
-            'exists' => 'integer|required',
+            'name' => 'string',
+            'brand' => 'string',
+            'price' => 'integer',
+            'count' => 'integer',
+            'region_id' => 'integer',
+            'delivery' => 'integer',
+            'exists' => 'integer',
             'description' => 'string',
         ]);
 
@@ -140,8 +145,8 @@ class ProductsController extends Controller
         }
 
         if ($request->file('mainImage')) {
-            $mainImage = $this->moveAttachments($request->file('mainImage'), 'main');
-            $data['main_image'] = $mainImage['fileName'];
+//            $mainImage = $this->moveAttachments($request->file('mainImage'), 'main');
+            $data['main_image'] = $image['fileName'];
         }
 
         Product::where('id', $id)->update($data);
@@ -170,7 +175,8 @@ class ProductsController extends Controller
                 $origName = $file->getClientOriginalName();
                 $destinationPath = 'images/' . $path;
                 $extension = $file->getClientOriginalExtension();
-                $fileName = md5(Carbon::now()->timestamp . $origName) . '.' . $extension;
+//                $fileName = md5(Carbon::now()->timestamp . $origName) . '.' . $extension;
+                $fileName = $origName;
                 $pathWithFilename = $destinationPath . '/' . $fileName;
                 $file->move($destinationPath, $fileName);
                 $url = URL::asset($destinationPath . '/' . $fileName);
@@ -195,6 +201,12 @@ class ProductsController extends Controller
         return view('pages.templates.products', ['products' => $products]);
     }
 
+    public function getProductsByRegion($id)
+    {
+        $products = Product::where('region_id', $id)->orderBy('created_at', 'desc')->paginate(8);
+        return view('pages.templates.products', ['products' => $products]);
+    }
+
     public function orderByCart(Request $request)
     {
         $data = $this->validate($request, [
@@ -207,6 +219,7 @@ class ProductsController extends Controller
         $newOrder = Orders::create([
             'name' => $data['name'],
             'phone' => $data['phone'],
+            'address' => $data['address'],
             'order' => $data['order']
         ])->toArray();
 

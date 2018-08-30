@@ -318,6 +318,7 @@ $(function () {
         var data = {
             name: form.find('input[name="name"]').val(),
             phone: form.find('input[name="phone"]').val(),
+            address: form.find('input[name="address"]').val(),
             order: JSON.parse(localStorage.getItem('cart'))
         };
 
@@ -325,7 +326,9 @@ $(function () {
             if (!results.errors && results.success) {
                 localStorage.removeItem('cart');
                 toastr.success('Ваш заказ принят.Вам скоро перезвонят.');
-                // setTimeout(function(){ window.location.replace('/'); }, 2000);
+                setTimeout(function () {
+                    window.location.replace('/');
+                }, 2000);
             }
         });
     });
