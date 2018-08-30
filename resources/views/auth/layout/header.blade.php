@@ -18,12 +18,13 @@
             {{--</a>--}}
         </ul>
         <ul class="nav navbar-nav pull-sm-right admin-left-navbar">
+            <li><a href="/products">Список продуктов</a></li>
             @guest
-                <li><a class="nav-link text-white" href="{{ route('login') }}">{{ __('Войти') }}</a></li>
-                <li><a class="nav-link text-white" href="{{ route('register') }}">{{ __('Регистрация') }}</a></li>
+                <li><a href="{{ route('login') }}">{{ __('Войти') }}</a></li>
+                <li><a href="{{ route('register') }}">{{ __('Регистрация') }}</a></li>
             @else
-                <li><a class="nav-link text-white" href="{{route('products.create')}}">Добавить продукт</a></li>
-                <li class="nav-item dropdown">
+                <li><a href="{{route('products.create')}}">Добавить продукт</a></li>
+                <li>
                     <a class="nav-link text-white" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">

@@ -232,4 +232,10 @@ class ProductsController extends Controller
             "success" => $newOrder ? true : false
         ]);
     }
+
+    public function getProductsBySearch(Request $request)
+    {
+        $products = Product::where('name', 'LIKE', '%' . $request->search . '%')->orderBy('created_at', 'desc')->paginate(8);
+            return view('pages.templates.products', ['products' => $products]);
+    }
 }

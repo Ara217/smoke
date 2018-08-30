@@ -27,6 +27,7 @@ Route::resource('products', 'ProductsController');
 Route::get('products/brands/{name}', 'ProductsController@getProductsByBrand');
 Route::get('products/regions/{id}', 'ProductsController@getProductsByRegion');
 Route::post('products/orderByCart', 'ProductsController@orderByCart');
+Route::get('/search', 'ProductsController@getProductsBySearch');
 Route::get('products/orders/list', 'ProductsController@orders')->name('orders');
 Route::get('/admin', 'HomeController@index')->name('admin');
 Route::post('/logout','Auth\LoginController@logout')->name('logout');

@@ -44,11 +44,10 @@
             <li>
                 <a href="/products">Список продуктов</a>
             </li>
-            <li>
-                <a href="/products/cart" id="cartCount">Корзина</a>
-            </li>
-
             @guest
+                <li>
+                    <a href="/products/cart" id="cartCount">Корзина</a>
+                </li>
                 <li>
                     <a href="{{ route('login') }}">{{ __('Войти') }}</a>
                 </li>
@@ -56,11 +55,8 @@
                 <li>
                     <a href="{{route('products.create')}}">Добавить продукт</a>
                 </li>
-                <li>
-                    <a href="/about">О нас</a>
-                </li>
-                <li class="">
-                    <a class="nav-link text-white" href="{{ route('logout') }}"
+                <li >
+                    <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                         {{ __('Выйти') }}
@@ -71,9 +67,10 @@
                         </form>
                     </div>
                 </li>
-
             @endguest
-
+                <li>
+                    <a href="/about">О нас</a>
+                </li>
         </ul>
     </div>
     {{--<div>--}}

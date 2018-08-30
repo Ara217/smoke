@@ -22,17 +22,16 @@
                             {{Form::label('brand', 'Бренд:')}}
                             <select name="brand" id="brand" class="form-control form-bg">
                                 @foreach($category as $cat)
-                                    <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                    <option value="{{$cat->name}}" {{$product->brand == $cat->name ? 'selected' : ''}}>{{$cat->name}}</option>
                                 @endforeach
                             </select>
-                            {{--                            {{Form::select('brand', $category, ['class' => 'form-control form-bg', 'id' => 'brand', 'placeholder' => 'Бренд'])}}--}}
                             {{$errors->first('brand')}}
                         </div>
                         <div class="form-group">
                             {{Form::label('region_id', 'Категория:')}}
                             <select name="region_id" id="region_id" class="form-control form-bg">
                                 @foreach($region as $reg)
-                                    <option value="{{$reg->id}}">{{$reg->name}}</option>
+                                    <option value="{{$reg->id}}" {{$product->region_id == $reg->id ? 'selected' : ''}}>{{$reg->name}}</option>
                                 @endforeach
                             </select>
                             {{$errors->first('region_id')}}
