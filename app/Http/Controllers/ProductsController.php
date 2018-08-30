@@ -27,7 +27,7 @@ class ProductsController extends Controller
     public function index()
     {
        $products = Product::orderBy('created_at', 'desc')->paginate(8);
-        return view('pages.templates.products', ['products' => $products]);
+        return view('pages.templates.products', ['products' => $products, 'search' => '']);
     }
 
     /**
@@ -198,13 +198,13 @@ class ProductsController extends Controller
     public function getProductsByBrand($name)
     {
         $products = Product::where('brand', $name)->orderBy('created_at', 'desc')->paginate(8);
-        return view('pages.templates.products', ['products' => $products]);
+        return view('pages.templates.products', ['products' => $products, 'search' => '']);
     }
 
     public function getProductsByRegion($id)
     {
         $products = Product::where('region_id', $id)->orderBy('created_at', 'desc')->paginate(8);
-        return view('pages.templates.products', ['products' => $products]);
+        return view('pages.templates.products', ['products' => $products, 'search' => '']);
     }
 
     public function orderByCart(Request $request)
@@ -236,6 +236,6 @@ class ProductsController extends Controller
     public function getProductsBySearch(Request $request)
     {
         $products = Product::where('name', 'LIKE', '%' . $request->search . '%')->orderBy('created_at', 'desc')->paginate(8);
-            return view('pages.templates.products', ['products' => $products]);
+            return view('pages.templates.products', ['products' => $products, 'search' => $request->search]);
     }
 }

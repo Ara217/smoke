@@ -19,7 +19,7 @@
                         {!! Form::open(['url' => '/search', 'method' => 'get', 'class' => 'mb-4']) !!}
                             <div class="form-row">
                                 <div class="col-10">
-                                    {{Form::text('search', null, ['class' => 'form-control', 'id' => 'search', 'placeholder' => 'Имя продукта'])}}
+                                    {{Form::text('search', $search, ['class' => 'form-control', 'id' => 'search', 'placeholder' => 'Имя продукта'])}}
                                     {{--<input type="text" class="form-control" placeholder="First name">--}}
                                 </div>
                                 <div class="col-md-1">
