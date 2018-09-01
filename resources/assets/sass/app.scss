@@ -242,6 +242,7 @@ a[aria-expanded="true"]::before {
   }
   #sidebar {
     margin-left: -200px;
+    max-height: fit-content;
   }
   #sidebar.active {
     margin-left: 0;

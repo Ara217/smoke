@@ -14083,6 +14083,9 @@ a[aria-expanded="true"]::before {
 
   #sidebar {
     margin-left: -200px;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
   }
 
   #sidebar.active {
