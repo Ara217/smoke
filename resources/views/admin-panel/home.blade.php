@@ -22,7 +22,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <p>
-                                                            Номер: {{$order->phone}}
+                                                            Номер телефона: {{$order->phone}}
                                                         </p>
                                                     </div>
                                                     <div class="col-md-4">

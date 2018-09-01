@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function($view) {
             View::share('brands', Product::select(['brand'])->groupBY('brand')->get()->pluck('brand'));
             View::share('category', Category::select(['name'])->groupBY('name')->get()->pluck('name'));
-            View::share('region', Region::select(['name'])->groupBY('name')->get()->pluck('name'));
+            View::share('region', Region::select(['id', 'name'])->get());
         });
     }
 

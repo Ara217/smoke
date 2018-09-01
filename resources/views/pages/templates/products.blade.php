@@ -11,19 +11,25 @@
                 <!-- Page Content Holder -->
                     <div id="content">
                         @include('pages.templates.menu-button')
-                        <div class="row">
-                            <div class="col-md-12">
+                        <div class="mb-3" style="display: flex; flex-direction: row; justify-content: space-between">
+                            <div>
                                 <h2>Популярные бренды</h2>
                             </div>
-                        </div>
-                        {!! Form::open(['url' => '/search', 'method' => 'get', 'class' => 'mb-4']) !!}
-                            <div class="form-row">
-                                <div class="col-10">
-                                    {{Form::text('search', $search, ['class' => 'form-control', 'id' => 'search', 'placeholder' => 'Имя продукта'])}}
-                                    {{--<input type="text" class="form-control" placeholder="First name">--}}
+                            <div class="dropdown mr-4">
+                                <button class="dropbtn">Каталог</button>
+                                <div class="dropdown-content">
+                                    @foreach($region as $reg)
+                                        <a href="/products/regions/{{$reg->id}}">{{$reg->name}}</a>
+                                    @endforeach
                                 </div>
-                                <div class="col-md-1">
-                                    {{--<input type="text" class="form-control" placeholder="Last name">--}}
+                            </div>
+                        </div>
+                        {!! Form::open(['url' => '/search', 'method' => 'get', 'class' => 'mb-4 search-form']) !!}
+                            <div class="form-row">
+                                <div class="col">
+                                    {{Form::text('search', $search, ['class' => 'form-control', 'id' => 'search', 'placeholder' => 'Имя продукта'])}}
+                                </div>
+                                <div>
                                     <input type="submit" class="btn form-control" value="Найти" style="padding: 7px 16px">
                                 </div>
                             </div>
