@@ -12,7 +12,7 @@
                     <div id="content">
                         @include('pages.templates.menu-button')
                         <div>
-                            <h3>О нас</h3>
+                            <h1>О нас</h1>
                         </div>
                     </div>
                 </div>

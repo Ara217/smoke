@@ -332,6 +332,23 @@ $(function () {
             }
         });
     });
+
+    $('#orderCall').on('submit', function (e) {
+        e.preventDefault();
+
+        var form = $(e.currentTarget);
+        var submitButton = form.find('input[type=submit]');
+
+        axios.post('/orderCall', form.serialize()).then(function (results) {
+            submitButton.prop("disabled", false);
+            form.find("input[type=text], textarea").val("");
+            form[0].reset();
+
+            if (!results.errors) {
+                toastr.success('Вы заказали звонок.');
+            }
+        });
+    });
     //
     // $("input[type='file']").on('change', () => {
     //     debugger;

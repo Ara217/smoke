@@ -21,12 +21,25 @@
             </li>
             @guest
                 <li>
+                    <i class="fa fa-cart-plus"></i>
+                    <a href="/products/cart" id="cartCount">Корзина</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone"></i>
+                    <a href="/order-call" id="orderCallButton">Заказать звонок</a>
+                </li>
+                <li>
                     <i class="fa fa-user-circle-o"></i>
                     <a href="{{ route('login') }}">{{ __('Войти') }}</a>
                 </li>
                 <li>
                     <i class="fa fa-registered"></i>
                     <a href="{{ route('register') }}">{{ __('Регистрация') }}</a>
+                </li>
+                <li>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-facebook"></i>
+                    <a href="/about">О нас</a>
                 </li>
             @else
                 <li>

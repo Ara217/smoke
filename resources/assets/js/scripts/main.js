@@ -79,6 +79,24 @@ $(() => {
 
         });
     });
+
+    $('#orderCall').on('submit', (e) => {
+        e.preventDefault();
+
+        let form = $(e.currentTarget);
+        let submitButton = form.find('input[type=submit]');
+
+        axios.post('/orderCall', form.serialize()).then((results) => {
+            submitButton.prop("disabled", false);
+            form.find("input[type=text], textarea").val("");
+            form[0].reset();
+
+            if (!results.errors) {
+                toastr.success('Вы заказали звонок.');
+            }
+
+        });
+    });
     //
     // $("input[type='file']").on('change', () => {
     //     debugger;

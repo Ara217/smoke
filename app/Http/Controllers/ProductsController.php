@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CallRequests;
 use App\Category;
 use App\Orders;
 use App\Product;
@@ -237,5 +238,25 @@ class ProductsController extends Controller
     {
         $products = Product::where('name', 'LIKE', '%' . $request->search . '%')->orderBy('created_at', 'desc')->paginate(8);
             return view('pages.templates.products', ['products' => $products, 'search' => $request->search]);
+    }
+
+
+    public function orderCall(Request $request)
+    {
+        $data = $this->validate($request, [
+            'name' => 'string|required',
+            'phoneNumber' => 'string|required'
+        ]);
+
+        Mail::send('pages.emails.call-request-email', $data, function($message) use ($data) {
+            $message->to('aramesropyan@gmail.com', $data['name'])->subject('Заказ на звонок');
+            $message->from('elitevikup@gmail.com', 'Элит-Выкуп');
+        });
+
+        $newCall = CallRequests::create($data);
+
+        return response()->json([
+            "success" => $newCall ? true : false,
+        ]);
     }
 }
