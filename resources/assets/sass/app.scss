@@ -65,6 +65,8 @@ $sidebar-headers-color: #4f5561;
 }
 
 .guest-body {
+  display: flex;
+  flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
@@ -80,6 +82,8 @@ $sidebar-headers-color: #4f5561;
 }
 
 .admin-body {
+  display: flex;
+  flex-direction: column;
   color: #e5ddd2 !important;
   background-color: #343334;
 }
@@ -157,16 +161,12 @@ a, a:hover, a:focus {
   min-width: 192px;
   max-width: 192px;
   color: #e5ddd2;
-  max-height: 950px;
+  max-height:800px;
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
   }
 }
-
-//#sidebar::-webkit-scrollbar {
-//  display: none;
-//}
 
 #sidebar.active {
   margin-left: -145px;
@@ -239,6 +239,8 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background: none;
+    display: flex;
+    flex-direction: column;
   }
   #sidebar {
     margin-left: -200px;
@@ -255,6 +257,26 @@ a[aria-expanded="true"]::before {
     width: 99% !important;
   }
 } //iphone
+
+@media only screen and (max-width: 1625px) and (min-width: 1030px) {
+  .guest-body, .admin-body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: table;
+    background-color: #343334;
+    background-image:none
+  }
+  .main {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+    //-webkit-box-flex: 0 !important;
+    //-ms-flex: 0 0 83.33333333% !important;
+    //flex: 0 0 83.33333333% !important;
+    //max-width: 83.33333333% !important;
+  }
+}
 
 
 @media (max-width: 760px) {
@@ -291,6 +313,8 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #343334;
+    display: flex;
+    flex-direction: column;
   };
   .logo-img {
     width: 130px;
@@ -302,6 +326,7 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #343334;
+    display: table
   };
   .product-block {
     width: 100% !important;

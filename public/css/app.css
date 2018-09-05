@@ -13907,6 +13907,13 @@ a:hover {
 }
 
 .guest-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
@@ -13919,6 +13926,13 @@ a:hover {
 }
 
 .admin-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #e5ddd2 !important;
   background-color: #343334;
 }
@@ -13996,7 +14010,7 @@ a:focus {
   min-width: 192px;
   max-width: 192px;
   color: #e5ddd2;
-  max-height: 950px;
+  max-height: 800px;
   overflow: auto;
 }
 
@@ -14079,6 +14093,13 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   #sidebar {
@@ -14098,6 +14119,24 @@ a[aria-expanded="true"]::before {
 
   .search-form {
     width: 99% !important;
+  }
+}
+
+@media only screen and (max-width: 1625px) and (min-width: 1030px) {
+  .guest-body,
+  .admin-body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: table;
+    background-color: #343334;
+    background-image: none;
+  }
+
+  .main {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
   }
 }
 
@@ -14139,6 +14178,13 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #343334;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .logo-img {
@@ -14152,6 +14198,7 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #343334;
+    display: table;
   }
 
   .product-block {

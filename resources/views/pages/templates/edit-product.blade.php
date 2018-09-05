@@ -4,7 +4,7 @@
 @section('admin_content')
     <main class="main-block">
         <div class="row content-block">
-            <div class="mx-auto col-md-8">
+            <div class="mx-auto col-md-8 main">
                 <div class="wrapper">
                     <!-- Sidebar Holder -->
                 @include('pages.templates.left-side-bar')
