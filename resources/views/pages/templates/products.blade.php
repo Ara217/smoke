@@ -50,7 +50,55 @@
                             @endforeach
                         </div>
                         <div class="col-md-12">
-                            {{ $products->links() }}
+                            @if ($products->hasPages())
+                                <ul class="pagination">
+                                    @if ($products->onFirstPage())
+                                        <li class="disabled page-item">
+                                            <span class="page-link">«</span>
+                                        </li>
+                                    @else
+                                        <li class="page-item">
+                                            <a class="page-link" href="{{ $products->previousPageUrl() }}" rel="prev">«</a>
+                                        </li>
+                                    @endif
+
+                                    @if($products->currentPage() > 3)
+                                        <li class="hidden-xs page-item">
+                                            <a class="page-link" href="{{ $products->url(1) }}">1</a>
+                                        </li>
+                                    @endif
+                                    @if($products->currentPage() > 4)
+                                        <li class="page-item">
+                                            <span class="page-link">...</span>
+                                        </li>
+                                    @endif
+                                    @foreach(range(1, $products->lastPage()) as $i)
+                                        @if($i >= $products->currentPage() - 2 && $i <= $products->currentPage() + 2)
+                                            @if ($i == $products->currentPage())
+                                                <li class="active page-item"><span class="page-link">{{ $i }}</span></li>
+                                            @else
+                                                <li class="page-item"><a class="page-link" href="{{ $products->url($i) }}">{{ $i }}</a></li>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                    @if($products->currentPage() < $products->lastPage() - 3)
+                                        <li class="page-item"><span class="page-link">...</span></li>
+                                    @endif
+                                    @if($products->currentPage() < $products->lastPage() - 2)
+                                        <li class="hidden-xs page-item"><a class="page-link" href="{{ $products->url($products->lastPage()) }}">{{ $products->lastPage() }}</a></li>
+                                    @endif
+                                    @if ($products->hasMorePages())
+                                        <li class="page-item">
+                                            <a class="page-link" href="{{ $products->nextPageUrl() }}" rel="next">»</a>
+                                        </li>
+                                    @else
+                                        <li class="disabled page-item">
+                                            <span class="page-link">»</span>
+                                        </li>
+                                    @endif
+                                </ul>
+                            @endif
+                            {{--{{ $products->links() }}--}}
                         </div>
                     </div>
                 </div>
