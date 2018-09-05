@@ -73,7 +73,7 @@
                                         </li>
                                     @endif
                                     @foreach(range(1, $products->lastPage()) as $i)
-                                        @if($i >= $products->currentPage() - 2 && $i <= $products->currentPage() + 2)
+                                        @if($i >= $products->currentPage() - 1 && $i <= $products->currentPage() + 1)
                                             @if ($i == $products->currentPage())
                                                 <li class="active page-item"><span class="page-link">{{ $i }}</span></li>
                                             @else
