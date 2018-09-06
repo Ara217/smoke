@@ -52,16 +52,24 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'name' => 'string|required',
-            'brand' => 'string|required',
-            'price' => 'integer|required',
-            'count' => 'integer|required',
-            'region_id' => 'integer|required',
-            'delivery' => 'integer|required',
-            'exists' => 'integer|required',
+            'name' => 'required',
+            'brand' => 'required',
+            'price' => 'required',
+            'count' => 'required',
+            'region_id' => 'required',
+            'delivery' => 'required',
+            'exists' => 'required',
             'description' => 'string',
             'image' => 'image|mimes:jpeg,png',
 //            'mainImage' => 'image|mimes:jpeg,png',
+        ], [
+            'name.required' => 'Укажите имя.',
+            'brand.required' => 'Укажите марку.',
+            'price.required' => 'Укажите цену.',
+            'count.required' => 'Укажите количество.',
+            'region_id.required' => 'Укажите категорию.',
+            'description.string' => 'Информация необходима.',
+            'image.required' => 'Требуется фото․',
         ]);
 
         $image = $this->moveAttachments($request->file('image'), 'preview');
@@ -138,6 +146,7 @@ class ProductsController extends Controller
             'delivery' => 'integer',
             'exists' => 'integer',
             'description' => 'string',
+            'image' => 'image|mimes:jpeg,png',
         ]);
 
         if ($request->file('image')) {
