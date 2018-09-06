@@ -37,13 +37,13 @@
                         <div class="row products-list">
                             @foreach($products as $product)
                                 <div class="col-md-3 product-block" data-image="{{$product->image}}" data-id="{{$product->id}}" data-price="{{$product->price}}"  data-count="{{$product->count}}" data-brand="{{$product->brand}}" data-name="{{$product->name}}">
-                                    <a class="product-link" href="/products/{{$product->id}}">
+                                    <a href="/products/{{$product->id}}">
                                         <img src="{{asset('images/preview/' . $product->image )}}" alt="{{$product->name}}">
                                     </a>
-                                    <a class="product-link" href="/products/{{$product->id}}">{{$product->name}}</a>
+                                    <a class="product-header" href="/products/{{$product->id}}">{{$product->name}}</a>
                                     <p class="product">
                                         Цена: {{$product->price}} p. <br>
-                                        Количество: {{$product->count}}
+                                        <span style="color: #fc0202e0">Есть в наличии: {{$product->exists ? 'Да' : 'Нет'}}</span>
                                     </p>
                                     <button class="btn add-to-cart">Добавить в корзину</button>
                                 </div>

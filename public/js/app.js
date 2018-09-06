@@ -323,6 +323,7 @@ $(function () {
         };
 
         axios.post('/products/orderByCart', data).then(function (results) {
+            form.find('input[type=submit]').prop('disabled', false);
             if (!results.errors && results.success) {
                 localStorage.removeItem('cart');
                 toastr.success('Ваш заказ принят.Вам скоро перезвонят.');

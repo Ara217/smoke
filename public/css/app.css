@@ -14198,7 +14198,7 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #343334;
-    display: table;
+    display: -webkit-box;
   }
 
   .product-block {
@@ -14215,7 +14215,7 @@ a[aria-expanded="true"]::before {
   }
 
   .product-block a {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .product-block img {
@@ -14270,7 +14270,7 @@ a[aria-expanded="true"]::before {
 }
 
 .product-block a {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .product-block img {

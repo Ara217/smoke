@@ -71,12 +71,12 @@ $(() => {
         };
 
         axios.post('/products/orderByCart', data).then((results) => {
+            form.find('input[type=submit]').prop('disabled', false);
             if (!results.errors && results.success) {
                 localStorage.removeItem('cart');
                 toastr.success('Ваш заказ принят.Вам скоро перезвонят.');
                 setTimeout(function(){ window.location.replace('/'); }, 2000);
             }
-
         });
     });
 

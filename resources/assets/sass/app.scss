@@ -326,7 +326,7 @@ a[aria-expanded="true"]::before {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #343334;
-    display: table
+    display: -webkit-box
   };
   .product-block {
     width: 100% !important;
@@ -337,7 +337,7 @@ a[aria-expanded="true"]::before {
       display: none;
     }
     a {
-      font-size: 24px;
+      font-size: 18px;
     }
     img {
       max-width: 95%;
@@ -389,7 +389,7 @@ a[aria-expanded="true"]::before {
     display: none;
   }
   a {
-    font-size: 24px;
+    font-size: 18px;
   }
   img {
       max-width: 90%;

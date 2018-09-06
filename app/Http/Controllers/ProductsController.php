@@ -211,10 +211,15 @@ class ProductsController extends Controller
     public function orderByCart(Request $request)
     {
         $data = $this->validate($request, [
-            'name' => 'string|required',
-            'phone' => 'string|required',
-            'address' => 'string|required',
+            'name' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
             'order' => 'required'
+        ], [
+           'name.required' => 'Введите ваше имя.',
+           'phone.required' => 'Введите номер телефона.',
+           'address.required' => 'Введите адрес.',
+           'order.required' => 'Корзина пуста.'
         ]);
 
         $newOrder = Orders::create([

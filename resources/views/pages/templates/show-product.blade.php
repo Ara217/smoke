@@ -55,7 +55,7 @@
                                             @endif
                                         </dl>  <!-- item-property-hor .// -->
                                         <dl class="param param-feature">
-                                            <dt>Есть в наличии: {{$product->exists ? 'Да' : 'Нет'}}</dt>
+                                            <dt style="color: #fc0202e0">Есть в наличии: {{$product->exists ? 'Да' : 'Нет'}}</dt>
                                         </dl>
                                         <dl class="param param-feature">
                                             <dt>Есть доставка: {{$product->delivery ? 'Да' : 'Нет'}}</dt>
