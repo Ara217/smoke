@@ -8,7 +8,11 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', '') }}</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Американские сигареты от 2600 р за блок. Европейские сигареты от 1000 рублей за блок.">
+        <meta name="keywords" content="Импортные сигареты,американские сигареты,европейские сигареты,доставка сигарет,сигареты из duty free, английские сигареты">
+        <title>@yield('title')</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/libs.js') }}"></script>
