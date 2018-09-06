@@ -5,11 +5,10 @@ $(() => {
         let image = parent.data('image');
         let price = parent.data('price');
         // let count = parent.data('count');
-        let count = $('#orderCount').val();
+        let count = $('#orderCount').val() || 1;
         let name = parent.data('name');
         let brand = parent.data('brand');
         let cart = {};
-
         if (localStorage.getItem('cart')) {
             let oldCart = JSON.parse(localStorage.getItem('cart'));
             let product = oldCart[name];

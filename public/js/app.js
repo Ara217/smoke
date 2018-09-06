@@ -259,11 +259,10 @@ $(function () {
         var image = parent.data('image');
         var price = parent.data('price');
         // let count = parent.data('count');
-        var count = $('#orderCount').val();
+        var count = $('#orderCount').val() || 1;
         var name = parent.data('name');
         var brand = parent.data('brand');
         var cart = {};
-
         if (localStorage.getItem('cart')) {
             var oldCart = JSON.parse(localStorage.getItem('cart'));
             var product = oldCart[name];

@@ -16,6 +16,6 @@ class Orders extends Model
 
     public function setOrderAttribute($value)
     {
-        $this->attributes['order'] = json_encode($value);
+        $this->attributes['order'] = json_encode($value, 0, JSON_UNESCAPED_UNICODE);
     }
 }

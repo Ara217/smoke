@@ -24,7 +24,7 @@
         Количество: {{$o['count']}}
     </p>
     <p>
-        Итог: {{$o['price'] * $o['count']}}
+        Итог: {{$o['price'] * $o['count']}} р
     </p>
     <hr>
 @endforeach

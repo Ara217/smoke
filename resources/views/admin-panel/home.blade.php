@@ -11,6 +11,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="table-responsive">
+                                        {{--{{dd($orders->all())}}--}}
                                         @foreach($orders->all() as $order)
                                             <hr style="background-color: #e5ddd2">
                                             <div>
