@@ -1,7 +1,7 @@
 @extends('auth.layout.app')
 
 @section('admin_content')
-    <main class="main-block">
+    <main class="main-block login">
         <div class="row content-block">
             <div class="mx-auto col-md-8 main">
                 <div class="wrapper">

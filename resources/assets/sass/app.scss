@@ -259,13 +259,28 @@ a[aria-expanded="true"]::before {
 } //iphone
 
 @media only screen and (max-width: 1250px) and (min-width: 1030px) {
-  .guest-body, .admin-body {
+  .admin-body {
     overflow-y: scroll;
     overflow-x: hidden;
     display: table;
     background-color: #343334;
     background-image:none
   }
+
+  .guest-body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: table;
+    background-image: url('/images/800-60.png');
+    background-position: top;
+    background-repeat: round;
+    background-attachment: scroll;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
+
   .main {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 75%;
