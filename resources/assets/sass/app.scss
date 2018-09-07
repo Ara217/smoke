@@ -258,7 +258,7 @@ a[aria-expanded="true"]::before {
   }
 } //iphone
 
-@media only screen and (max-width: 1625px) and (min-width: 1030px) {
+@media only screen and (max-width: 1250px) and (min-width: 1030px) {
   .guest-body, .admin-body {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -278,6 +278,18 @@ a[aria-expanded="true"]::before {
   }
 }
 
+@media only screen and (max-width: 1625px) and (min-width: 1250px) {
+  .guest-body {
+    background-image: url('/images/My-version-1080.png');
+    background-position: top;
+    background-repeat: round;
+    background-attachment: scroll;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
+}
 
 @media (max-width: 760px) {
   .logo-block {

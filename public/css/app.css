@@ -14122,7 +14122,7 @@ a[aria-expanded="true"]::before {
   }
 }
 
-@media only screen and (max-width: 1625px) and (min-width: 1030px) {
+@media only screen and (max-width: 1250px) and (min-width: 1030px) {
   .guest-body,
   .admin-body {
     overflow-y: scroll;
@@ -14137,6 +14137,16 @@ a[aria-expanded="true"]::before {
     -ms-flex: 0 0 75%;
     flex: 0 0 75%;
     max-width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1625px) and (min-width: 1250px) {
+  .guest-body {
+    background-image: url("/images/My-version-1080.png");
+    background-position: top;
+    background-repeat: round;
+    background-attachment: scroll;
+    background-size: contain;
   }
 }
 
