@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Заказать звонок - Табак Маркет')
+@section('title', 'Заказать звонок - tabak-market.su')
 
 @section('content')
     <main class="main-block">

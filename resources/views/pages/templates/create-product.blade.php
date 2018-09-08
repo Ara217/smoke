@@ -1,5 +1,5 @@
 @extends('auth.layout.app')
-@section('title', '')
+@section('title', 'Добавит продукт - tabak-market.su')
 
 @section('admin_content')
     <main class="main-block">

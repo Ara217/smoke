@@ -1,5 +1,5 @@
 @extends('pages.main')
-@section('title', '')
+@section('title', $product->name)
 
 @section('smoke_content')
     <main class="main-block">

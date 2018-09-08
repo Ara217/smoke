@@ -1,4 +1,5 @@
 @extends('auth.layout.app')
+@section('title', 'Войти - tabak-market.su')
 
 @section('admin_content')
     <main class="main-block login">

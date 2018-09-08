@@ -1,5 +1,5 @@
 @extends('pages.main')
-@section('title', '')
+@section('title', 'Корзина - tabak-market.su')
 
 @section('smoke_content')
     <main class="main-block">

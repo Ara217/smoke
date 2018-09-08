@@ -1,4 +1,5 @@
 @extends('auth.layout.app')
+@section('title', 'Регистрация - tabak-market.su')
 
 @section('admin_content')
     <main class="main-block register">

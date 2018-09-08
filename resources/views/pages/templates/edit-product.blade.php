@@ -1,5 +1,5 @@
 @extends('auth.layout.app')
-@section('title', '')
+@section('title', 'Изменит продукт - tabak-market.su')
 
 @section('admin_content')
     <main class="main-block">
@@ -11,7 +11,7 @@
                 <!-- Page Content Holder -->
                     <div id="content">
                         @include('pages.templates.menu-button')
-                        <h2>Добавит продукт</h2>
+                        <h2>Изменит продукт</h2>
                         {!! Form::open(['route' => array('products.update', $product), 'method' => 'patch', 'files' => true]) !!}
                         <div class="form-group">
                             {{Form::label('name', 'Имя продукта:')}}

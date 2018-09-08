@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'О нас - elitvikup.com')
+@section('title', 'О нас - tabak-market.su')
 
 @section('content')
     <main class="main-block">

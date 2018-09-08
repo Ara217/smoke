@@ -1,5 +1,5 @@
 @extends('pages.main')
-@section('title', 'Американские сигареты и импортные сигареты из Европы')
+@section('title', 'Популярные бренды - tabak-market.su')
 
 @section('smoke_content')
     <main class="main-block">
